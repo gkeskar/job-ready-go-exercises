@@ -30,7 +30,7 @@ type Combo struct {
 	price  float64
 }
 
-func user_input_burger() Burger {
+func userInputBurger() Burger {
 	var inputBurger Burger
 	var inputBun string
 	var inputDress string
@@ -56,7 +56,7 @@ func user_input_burger() Burger {
 	return inputBurger
 }
 
-func user_input_drink() Drink {
+func userInputDrink() Drink {
 	var inputDrink Drink
 	fmt.Print("Do you want water or soda?")
 	var inputDrinkType string
@@ -71,7 +71,7 @@ func user_input_drink() Drink {
 	return inputDrink
 }
 
-func user_input_side() Side {
+func userInputSide() Side {
 	var inputSide Side
 	var inputSideOption string
 	reader := bufio.NewReader(os.Stdin)
@@ -92,15 +92,15 @@ func user_input_side() Side {
 }
 
 func userInputCombo() Combo {
-	burger := user_input_burger()
+	burger := userInputBurger()
 	var inputCombo Combo
 	var inputComboOption string
 	fmt.Print("Do you want burger with side or drink?")
 	fmt.Scan(&inputComboOption)
 	if inputComboOption == "side" {
-		inputCombo.side = user_input_side()
+		inputCombo.side = userInputSide()
 	} else if inputComboOption == "drink" {
-		inputCombo.drink = user_input_drink()
+		inputCombo.drink = userInputDrink()
 	}
 	inputCombo.burger = burger
 	return inputCombo
@@ -153,10 +153,7 @@ func takeOrderFromUser() {
 			fmt.Print("Total price for your order is:", totalPrice)
 		}
 	}
-
-	cat ~/.ssh/id_rsa.pub.ssh/config
-
-	git remote set-url origin https://YOUR_TOKEN@github.com/username/repo.git}
+}
 
 func main() {
 	fmt.Println("Welcome to our burger shop!")
